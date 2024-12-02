@@ -1,0 +1,184 @@
+/* General styling for the portal container */
+.portal-container {
+    /* background-color: #f5f5f5; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(140deg, #2a3751, #6179a8c9);
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    margin: 0 auto;
+    /* border-radius: 8px; */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern look */
+  }
+  
+  /* Welcome message */
+  .welcome-message {
+    font-size: 2.5rem;
+    color: #f5f5f5;
+    margin-bottom: 30px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  /* Style for the quizzes list */
+  .quizzes-list {
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly more transparent */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px; /* Wider width */
+    margin-top: 40px;
+    animation: slideIn 0.6s ease-out;
+    backdrop-filter: blur(15px);
+    border: 1px solid #ddd; /* Light border around list */
+  }
+  
+  /* Available Questions heading (larger size, more spacing) */
+  .quizzes-title {
+    font-size: 2.3rem; /* Larger title */
+    color: #333;
+    margin-bottom: 25px;
+    text-align: left;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-left: 20px;
+    border-left: 5px solid #333; /* Left border for emphasis */
+  }
+  
+  /* Styling for the quiz items */
+  .quiz-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .quiz-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .quiz-item:hover {
+    background-color: #e0f7fa;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s ease;
+  }
+  
+  .quiz-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  
+  .quiz-description {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-align: left;
+    line-height: 1.6; /* Improved readability */
+  }
+  
+  /* Start Quiz button (new color, better hover effect) */
+  .start-quiz-btn {
+    background: linear-gradient(150deg, #1a2232, #42567d); /* Gradient background */
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .start-quiz-btn:hover {
+    background: linear-gradient(150deg, #42567d, #1a2232);
+    transform: scale(1.05); /* Subtle scale effect */
+  }
+  
+  .start-quiz-link {
+    text-decoration: none;
+  }
+  
+  /* Animation for fade-in effect */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Animation for slide-in effect */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Custom scrollbar styles */
+  .portal-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .portal-container::-webkit-scrollbar-thumb {
+    background-color: #1a2232;
+    border-radius: 5px;
+  }
+  
+  .portal-container::-webkit-scrollbar-thumb:hover {
+    background-color: #090f1d;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .portal-container {
+      padding: 20px;
+    }
+  
+    .quizzes-list {
+      padding: 20px;
+    }
+  
+    .quiz-item {
+      padding: 15px;
+      font-size: 1rem;
+    }
+  
+    .start-quiz-btn {
+      font-size: 1rem;
+      padding: 12px 24px;
+    }
+  }
+  

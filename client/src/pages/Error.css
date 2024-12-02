@@ -1,0 +1,86 @@
+/* General Styling */
+#error-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f7f7f7;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .content {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .header {
+    font-size: 80px;
+    font-weight: bold;
+    color: #ff5733; /* A red color for the 404 */
+    margin-bottom: 10px;
+  }
+  
+  h4 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+  
+  .btns {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .btns a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btns a:hover {
+    background-color: #0056b3;
+  }
+  
+  .btns a:active {
+    background-color: #004085;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .header {
+      font-size: 60px;
+    }
+  
+    h4 {
+      font-size: 20px;
+    }
+  
+    p {
+      font-size: 14px;
+    }
+  
+    .btns a {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
+  }
+  

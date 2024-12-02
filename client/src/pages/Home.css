@@ -1,0 +1,153 @@
+/* General styling for the main hero section */
+.section-hero {
+    position: relative;
+    padding: 80px 20px;
+    background: linear-gradient(45deg, #f0f4f8, #e2e8f0);
+    color: #1f2937;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Background image styling for hero sections */
+  .section-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+  }
+  
+  /* Container styling for layout */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .grid-two-cols {
+    display: flex; /* Use flex layout to align content horizontally */
+    gap: 40px;
+    align-items: center; /* Aligns text and image horizontally in the same row */
+  }
+  
+  /* Styling for hero content */
+  .hero-content {
+    animation: fadeIn 1s ease-in-out;
+    flex: 1; /* Makes hero-content take available space */
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem;
+    margin: 10px 0;
+    color: #1f2937;
+    font-weight: bold;
+    line-height: 1.2;
+    text-shadow: 1px 1px 5px rgba(31, 41, 55, 0.1);
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #374151;
+    margin-bottom: 20px;
+  }
+  
+  /* Button styling */
+  .btn-group {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .btn {
+    padding: 12px 28px;
+    background: linear-gradient(150deg, #42567d,#1a2232);
+    color: #ffffff;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 6px 18px rgba(31, 41, 55, 0.2);
+  }
+  
+  .btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(150deg, #1a2232, #42567d);
+  }
+  
+  /* Hero Image Styling */
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideInFromRight 1s ease;
+    flex: 1; /* Makes hero-image take available space */
+  }
+  
+  .hero-image img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(31, 41, 55, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+  }
+  
+  .hero-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(31, 41, 55, 0.3);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .grid-two-cols {
+      flex-direction: column; /* Stack content vertically on smaller screens */
+      text-align: center;
+    }
+  
+    .hero-content h1 {
+      font-size: 2.2rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  
+    .hero-image img {
+      max-width: 300px;
+    }
+  }
+  

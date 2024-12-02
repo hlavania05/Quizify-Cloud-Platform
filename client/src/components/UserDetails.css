@@ -1,0 +1,183 @@
+.user-details {
+    width: 78%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow: auto;
+}
+
+.add-user-btn {
+    margin-bottom: 20px;
+    padding: 12px 25px;
+    background-color: #2d3a4b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-user-btn:hover {
+    background-color: #1a2232;
+    transform: scale(1.0); /* Slightly enlarge button */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Form styling */
+.add-user-form {
+    width : 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.add-user-form input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.add-user-form input:focus {
+    border-color: #2d3a4b;
+}
+
+.add-user-form button {
+    padding: 12px 25px;
+    background-color: #2d3a4b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-user-form button:hover {
+    background-color: #1a2232;
+    transform: scale(1.0); /* Slightly enlarge button */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* User cards */
+.user-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: start; /* Align cards to start */
+    animation: fadeIn 1s ease-out; /* Add fade-in animation */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    width: 260px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px; /* Add margin between rows of cards */
+}
+
+.user-card:hover {
+    transform: translateY(-5px); /* Slight elevation effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.user-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.user-card p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.user-actions {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 90px;
+}
+
+.edit-btn {
+    background-color: #f0ad4e;
+    color: white;
+    border: 1px solid #f0ad4e;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: 1px solid #e74c3c;
+}
+
+.edit-btn:hover {
+    background-color: #ec971f;
+    transform: scale(1.05); /* Slight enlargement effect on hover */
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05); /* Slight enlargement effect on hover */
+}
+
+/* Responsive design: Adjust cards layout on smaller screens */
+@media (max-width: 768px) {
+    .user-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .user-card {
+        width: 300px;
+    }
+}
