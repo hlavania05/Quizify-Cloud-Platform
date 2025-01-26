@@ -19,7 +19,7 @@ pipeline {
             steps {
                 // Install backend dependencies
                 dir('server') {
-                    sh 'npm install'
+                    sh 'sudo npm install'
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 // Install frontend dependencies
                 dir('client') {
-                    sh 'npm install'
+                    sh 'sudo npm install'
                 }
             }
         }
@@ -38,10 +38,10 @@ pipeline {
                 // Build frontend and backend using Dockerfiles
                 script {
                     // Build backend Docker image
-                    sh 'docker build --no-cache -t quiz-portal-backend ./server'
+                    sh 'sudo docker build --no-cache -t quiz-portal-backend ./server'
 
                     // Build frontend Docker image
-                    sh 'docker build --no-cache -t quiz-portal-frontend ./client'
+                    sh 'sudo docker build --no-cache -t quiz-portal-frontend ./client'
                 }
             }
         }
@@ -50,11 +50,11 @@ pipeline {
             steps {
                 // Run backend and frontend tests (optional)
                 dir('server') {
-                    sh 'npm test'
+                    sh 'sudo npm test'
                 }
 
                 dir('client') {
-                    sh 'npm test'
+                    sh 'sudo npm test'
                 }
             }
         }
@@ -71,14 +71,14 @@ pipeline {
                         cd /var/www/Quizify-Cloud-Platform
 
                         # Stop and remove any existing containers
-                        docker ps -q -f name=quiz-portal-backend | xargs -r docker stop | xargs -r docker rm
-                        docker ps -q -f name=quiz-portal-frontend | xargs -r docker stop | xargs -r docker rm
+                        sudo docker ps -q -f name=quiz-portal-backend | xargs -r docker stop | xargs -r docker rm
+                        sudo docker ps -q -f name=quiz-portal-frontend | xargs -r docker stop | xargs -r docker rm
 
                         # Run the new backend container
-                        docker run -d --name quiz-portal-backend -p 3000:3000 quiz-portal-backend
+                        sudo docker run -d --name quiz-portal-backend -p 3000:3000 quiz-portal-backend
 
                         # Run the new frontend container
-                        docker run -d --name quiz-portal-frontend -p 80:80 quiz-portal-frontend
+                        sudo docker run -d --name quiz-portal-frontend -p 80:80 quiz-portal-frontend
                         EOF
                         '''
                     }
