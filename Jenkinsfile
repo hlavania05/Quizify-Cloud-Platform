@@ -38,10 +38,10 @@ pipeline {
                 // Build frontend and backend using Dockerfiles
                 script {
                     // Build backend Docker image
-                    sh 'docker build -t quiz-portal-backend ./server'
+                    sh 'docker build --no-cache -t quiz-portal-backend ./server'
 
                     // Build frontend Docker image
-                    sh 'docker build -t quiz-portal-frontend ./client'
+                    sh 'docker build --no-cache -t quiz-portal-frontend ./client'
                 }
             }
         }
@@ -66,21 +66,21 @@ pipeline {
                     script {
                         // SSH into the EC2 instance
                         sh '''
-                ssh -o StrictHostKeyChecking=no ec2-user@${EC2_HOST} << EOF
-                # Navigate to the project directory
-                cd /var/www/Quizify-Cloud-Platform
+                        ssh -o StrictHostKeyChecking=no ec2-user@${EC2_HOST} << EOF
+                        # Navigate to the project directory
+                        cd /var/www/Quizify-Cloud-Platform
 
-                # Stop and remove any existing containers
-                docker ps -q -f name=quiz-portal-backend | xargs -r docker stop | xargs -r docker rm
-                docker ps -q -f name=quiz-portal-frontend | xargs -r docker stop | xargs -r docker rm
+                        # Stop and remove any existing containers
+                        docker ps -q -f name=quiz-portal-backend | xargs -r docker stop | xargs -r docker rm
+                        docker ps -q -f name=quiz-portal-frontend | xargs -r docker stop | xargs -r docker rm
 
-                # Run the new backend container
-                docker run -d --name quiz-portal-backend -p 3000:3000 quiz-portal-backend
+                        # Run the new backend container
+                        docker run -d --name quiz-portal-backend -p 3000:3000 quiz-portal-backend
 
-                # Run the new frontend container
-                docker run -d --name quiz-portal-frontend -p 80:80 quiz-portal-frontend
-                EOF
-                '''
+                        # Run the new frontend container
+                        docker run -d --name quiz-portal-frontend -p 80:80 quiz-portal-frontend
+                        EOF
+                        '''
                     }
                 }
             }
