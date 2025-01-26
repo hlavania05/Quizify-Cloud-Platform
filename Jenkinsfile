@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         // Ensure Node.js and NPM are set up correctly
-        NODE_HOME = tool name: 'NodeJS', type: 'NodeJS'  // Automatically use the configured NodeJS tool in Jenkins
+        NODE_HOME = tool name: 'NodeJS', type: 'tool'  // Automatically use the configured NodeJS tool in Jenkins
         PATH = "${NODE_HOME}/bin:${env.PATH}"  // Add Node.js binary directory to PATH for use in pipeline
         EC2_HOST = '13.233.147.16'  // EC2 instance host IP
         SSH_CREDENTIALS_ID = 'ec2-ssh-key'  // SSH credentials ID for accessing EC2 instance
