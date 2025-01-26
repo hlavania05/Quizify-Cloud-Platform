@@ -18,7 +18,7 @@ pipeline {
         stage('Install Backend Dependencies') {
             steps {
                 // Install backend dependencies
-                dir('backend') {
+                dir('server') {
                     sh 'npm install'
                 }
             }
@@ -27,7 +27,7 @@ pipeline {
         stage('Install Frontend Dependencies') {
             steps {
                 // Install frontend dependencies
-                dir('frontend') {
+                dir('client') {
                     sh 'npm install'
                 }
             }
@@ -38,10 +38,10 @@ pipeline {
                 // Build frontend and backend using Dockerfiles
                 script {
                     // Build backend Docker image
-                    sh 'docker build -t quiz-portal-backend ./backend'
+                    sh 'docker build -t quiz-portal-backend ./server'
 
                     // Build frontend Docker image
-                    sh 'docker build -t quiz-portal-frontend ./frontend'
+                    sh 'docker build -t quiz-portal-frontend ./client'
                 }
             }
         }
@@ -49,11 +49,11 @@ pipeline {
         stage('Test Application') {
             steps {
                 // Run backend and frontend tests (optional)
-                dir('backend') {
+                dir('server') {
                     sh 'npm test'
                 }
 
-                dir('frontend') {
+                dir('client') {
                     sh 'npm test'
                 }
             }
