@@ -8,6 +8,7 @@ export const UserDetails = () => {
         username: '',
         email: '',
         password: '',
+        isAdmin: '',
     });
 
     useEffect(() => {
@@ -68,6 +69,7 @@ export const UserDetails = () => {
                     username: newUser.username,
                     email: newUser.email,
                     password: newUser.password,
+                    isAdmin: newUser.isAdmin,
                 }),
             });
 
@@ -78,13 +80,14 @@ export const UserDetails = () => {
                     id: users.length + 1,
                     username: newUser.username,
                     email: newUser.email,
-                    role: 'User',  // Assuming by default all users are non-admin
+                    isAdmin: 'false', 
                 };
                 setUsers([...users, createdUser]);
                 setNewUser({
                     username: '',
                     email: '',
                     password: '',
+                    isAdmin: '',
                 });
                 setShowForm(false);
                 alert(data.msg);
@@ -141,7 +144,7 @@ export const UserDetails = () => {
                     <div key={user._id} className="user-card">
                         <h3>{user.username}</h3>
                         <p>Email: {user.email}</p>
-                        <p>Role: {user.role}</p>
+                        <p>Role: {user.isAdmin ? 'Admin' : 'User'}</p>
                         <div className="user-actions">
                             <button onClick={() => handleDelete(user._id)} className="delete-btn">Delete</button>
                         </div>
