@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const URI = "mongodb://localhost:27017/quiz_admin";
+// const URI = "mongodb://localhost:27017/quiz_admin";
+const URI = "mongodb+srv://harshitalavania:hlavania05@quizplatform.rn9xp.mongodb.net/?retryWrites=true&w=majority&appName=quizPlatform";
 
 const connectdb = async () => {
   try {
