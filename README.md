@@ -1,6 +1,6 @@
 # Quizify - Cloud-Based Quiz Platform
 
-![Quizify Banner](https://user-images.githubusercontent.com/hlavania05/assets/quizify-banner.png)  
+![Quizify Banner](https://github.com/hlavania05/Quizify-Cloud-Platform/blob/master/assets/quizify-banner.png)  
 *An engaging platform to create, play, and manage quizzes seamlessly.*
 
 ---
@@ -65,7 +65,7 @@ This platform is perfect for educators, learners, and quiz enthusiasts who want 
 ## 📸 Assets
 
 ### Swagger Screenshot  
-![Swagger UI Screenshot](https://user-images.githubusercontent.com/hlavania05/assets/Swagger.png)
+![Swagger UI Screenshot](https://github.com/hlavania05/Quizify-Cloud-Platform/blob/master/assets/Swagger.png)
 
 ---
 
