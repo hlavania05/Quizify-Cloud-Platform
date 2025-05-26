@@ -1,6 +1,6 @@
 # Quizify - Cloud-Based Quiz Platform
 
-![Quizify Banner](https://user-images.githubusercontent.com/yourusername/banner-image.png)  
+![Quizify Banner](https://user-images.githubusercontent.com/hlavania05/assets/quizify-banner.png)  
 *An engaging platform to create, play, and manage quizzes seamlessly.*
 
 ---
@@ -30,7 +30,7 @@ This platform is perfect for educators, learners, and quiz enthusiasts who want 
 
 ## 🛠️ Technology Stack
 
-- **Frontend:** React.js, Bootstrap 5, HTML5, CSS3  
+- **Frontend:** React.js, HTML5, CSS3  
 - **Backend:** Node.js with Express.js, JWT-based authentication  
 - **Database:** MongoDB with Mongoose ORM  
 - **Other Tools:** Docker, Postman, Git & GitHub  
@@ -49,9 +49,23 @@ This platform is perfect for educators, learners, and quiz enthusiasts who want 
 ## 📂 Project Structure
 
 - `client/` — React frontend code  
-- `server/` — Node.js backend API  
-- `docker-compose.yml` — Docker configuration for easy containerized deployment  
+- `server/` — Node.js backend API 
 - `README.md` — Project documentation  
+
+---
+
+## 🌐 Application URLs
+
+- **Frontend:** [`http://localhost:5173`](http://localhost:5173)
+- **Backend API:** [`http://localhost:3000/api`](http://localhost:3000/api)
+- **Swagger UI:** [`http://localhost:3000/api-docs`](http://localhost:3000/api-docs)
+
+---
+
+## 📸 Assets
+
+### Swagger Screenshot  
+![Swagger UI Screenshot](https://user-images.githubusercontent.com/hlavania05/assets/Swagger.png)
 
 ---
 
@@ -62,16 +76,10 @@ Feel free to fork the repository and open pull requests to improve the project!
 
 ---
 
-## 📝 License
-
-This project is licensed under the MIT License.
-
----
-
 ## 📞 Contact
 
-Created and maintained by **Harsh Lavania**  
-[GitHub Profile](https://github.com/hlavania05) | [LinkedIn](https://linkedin.com/in/hlavania05)  
+Created and maintained by **Harshita Lavania**  
+[GitHub Profile](https://github.com/hlavania05) | [LinkedIn](https://www.linkedin.com/in/harshitalavania/)  
 
 ---
 
