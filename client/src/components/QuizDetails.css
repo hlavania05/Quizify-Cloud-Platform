@@ -1,0 +1,322 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.quiz-details-section {
+    padding: 40px;
+    width: 75%;
+    margin: auto;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Header Styling */
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #f4f4f9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: "";
+    width: 50%;
+    height: 4px;
+    background-color: #f6f6ffb1;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+/* Quiz List Styling */
+.quiz-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.quiz-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quiz-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.quiz-title:hover {
+    color: #4CAF50;
+}
+
+.quiz-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Action Buttons Styling */
+.quiz-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.show-questions-btn,
+.add-questions-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.show-questions-btn:hover,
+.add-questions-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.show-questions-btn:active,
+.add-questions-btn:active {
+    transform: translateY(1px);
+}
+
+/* Questions List Styling */
+.questions-list {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.question-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.question-item:hover {
+    background-color: #f9f9f9;
+    transform: translateY(-2px);
+}
+
+.question-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.question-options {
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.question-option {
+    font-size: 1rem;
+    color: #555;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-left: 15px;
+}
+
+.question-option:hover {
+    color: #4CAF50;
+}
+
+.question-option::before {
+    content: '•';
+    color: #4CAF50;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+}
+
+/* Correct Answer Styling */
+.correct-answer {
+    font-size: 1rem;
+    color: #2a2a2a;
+    font-weight: bold;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* Empty State */
+.no-quizzes {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    padding: 20px;
+}
+
+/* Form Styling for Adding a Quiz */
+.add-quiz-form {
+    display: none; /* Initially hidden until "Add Quiz" is clicked */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 5rem;
+    margin-top: 2rem;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.add-quiz-form.visible {
+    display: block; /* Shows the form when visible class is added */
+}
+
+.form-header {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-input, .form-textarea {
+    padding: 1rem;
+    font-size: 1rem;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus, .form-textarea:focus {
+    border-color: #4CAF50;
+}
+
+.form-textarea {
+    min-height: 3rem;
+    resize: vertical;
+}
+
+.add-question-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin-top: 10px;
+}
+
+.add-question-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.add-question-btn:active {
+    transform: translateY(1px);
+}
+
+/* Submit Button Styling */
+.submit-quiz-btn {
+    background: linear-gradient(150deg, #1a2232, #5b729f);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 1rem auto 3rem;
+}
+
+.submit-quiz-btn:hover {
+    background: linear-gradient(150deg, #5b729f, #1a2232);
+    transform: translateY(-2px);
+}
+
+.submit-quiz-btn:active {
+    transform: translateY(1px);
+}
+
+/* Adjustments for the Add Quiz Button */
+.add-quiz-btn {
+    background: linear-gradient(150deg, #1a2232, #5b729f);
+    margin-bottom: 2rem;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    width : 100%;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-weight: bold;
+}
+
+.add-quiz-btn:hover {
+    background: linear-gradient(150deg, #5b729f, #1a2232);
+    transform: translateY(-2px);
+}

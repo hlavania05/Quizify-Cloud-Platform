@@ -1,0 +1,14 @@
+/* Footer.css */
+.footer {
+    background: linear-gradient(150deg, #1a2232, #42567d);
+    animation: gradientAnimation 10s ease infinite;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-content p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  

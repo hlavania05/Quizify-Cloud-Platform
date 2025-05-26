@@ -1,0 +1,64 @@
+.sidebar {
+    width: 22%;
+    height: auto;
+    background: linear-gradient(150deg, #1a2232, #42567d);
+    color: white;
+    padding: 40px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* .sidebar:hover {
+    transform: translateX(5px); 
+} */
+
+.sidebar h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+    position: relative;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    padding-left: 5px; /* Adds space for the sliding effect */
+}
+
+.sidebar ul li a:hover {
+    color: #f0f0f0;
+    padding-left: 15px; /* Moves the link text to the right on hover */
+    border-left: 3px solid #f0f0f0; /* Adds a left border when hovered */
+    font-weight: bold; /* Makes the font bolder on hover */
+}
+
+.sidebar ul li a::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: opacity 0.3s ease;
+}
+
+.sidebar ul li a:hover::before {
+    opacity: 1;
+}
